@@ -1,0 +1,58 @@
+{
+    "cases": {
+        "Horizon": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Horizon%20Case"
+        },
+        "Gamma": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Gamma%20Case"
+        },
+        "Dangerzone": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Danger%20Zone%20Case"
+        },
+        "Clutch": {
+            "url": "http://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Clutch%20Case"
+        },
+        "Chroma3": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Chroma%203%20Case"
+        },
+        "CS20": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=CS20%20Case"
+        },
+        "Prisma2": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Prisma%202%20Case"
+        },
+        "Spectrum2": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Spectrum%202%20Case"
+        },
+        "Prisma": {
+            "url": "http://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Prisma%20Case"
+        },
+        "Revolver": {
+            "url": "http://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Revolver%20Case"
+        },
+        "OperationBrokenFang": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Operation%20Broken%20Fang%20Case"
+        },
+        "OperationHydra": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Operation%20Hydra%20Case"
+        },
+        "OperationRiptide": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Operation%20Riptide%20Case"
+        },
+        "Gamma2": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Gamma%202%20Case"
+        },
+        "Fracture": {
+            "url": "http://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Fracture%20Case"
+        },
+        "Snakebite": {
+            "url": "http://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Snakebite%20Case"
+        },
+        "Recoil": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Recoil%20Case"
+        },
+        "Dreams&Nightmare": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Dreams%20%26%20Nightmares%20Case"
+        }
+    }
+}

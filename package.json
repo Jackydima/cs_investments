@@ -1,0 +1,17 @@
+{
+  "name": "cs_investments",
+  "version": "1.0.0",
+  "description": "Test Project to play with the market prices of skins and cases",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "server": "npx json-server --watch data.json --port 4000",
+    "dev": "node ./main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jackydima",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "^0.17.3"
+  }
+}
