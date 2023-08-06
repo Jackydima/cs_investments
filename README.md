@@ -27,8 +27,10 @@ This will run a local jsondb server to provide a local json data set of Items in
     }
 }
 ~~~
+Please provide a data.json file that takes the items with the given url
 
 - open another terminal and type in to get the data.csv
 ~~~
 npm run dev
 ~~~
+
