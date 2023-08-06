@@ -3,14 +3,6 @@ import getJson from './getJson.js';
 import { writeFileSync } from 'fs'
 
 const timer = delay => new Promise(res => setTimeout(res, delay));
-/*
-writeFileSync('./data.csv', "Item, Price\n", err => {
-    if (err) {
-        console.log("Error: ", err)
-        return -1
-    }
-})
-*/
 
 const getPrices = () => {
     getJson("http://localhost:4000/cases")
@@ -22,12 +14,12 @@ const getPrices = () => {
                     writeFileSync('./data.csv', `${item}, ${price}\n`, { flag: "a" }, err => {
                         if (err) {
                             console.log("Error: ", err)
-                            return -1
+                            throw err
                         }
                     })
                 }))
                     .catch((error) => { throw error });
-                await timer(1000);
+                await timer(1000); // Use it Slowly and synchronised, so it wont timeout you
             }
         })
         .catch((error) => {
@@ -36,6 +28,14 @@ const getPrices = () => {
         });
 }
 
+/*
+writeFileSync('./data.csv', "Item, Price\n", err => {
+    if (err) {
+        console.log("Error: ", err)
+        return -1
+    }
+})
+*/
 try {
     getPrices();
 } catch (error) {
