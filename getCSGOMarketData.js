@@ -22,7 +22,7 @@ const getCSGOMarketData = async (url, path) => {
             // console.log(value);
             return value;
         }
-        throw new Error(`No Success in receiving the data`);
+        throw new Error(`No Success in receiving the data, URL: ${url}`);
     } catch (error) {
         throw error;
     }

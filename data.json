@@ -1,5 +1,5 @@
 {
-    "cases": {
+    "items": {
         "Horizon": {
             "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Horizon%20Case"
         },
@@ -53,6 +53,10 @@
         },
         "Dreams&Nightmare": {
             "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Dreams%20%26%20Nightmares%20Case"
+        },
+        "AK-47_TheEmpress_FN": {
+            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=AK-47%20%7C%20The%20Empress%20%28Factory%20New%29",
+            "condition": "factory_new"
         }
     }
 }
