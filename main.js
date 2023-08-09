@@ -2,11 +2,13 @@ import { getCSGOMarketData, formatPrice } from './getCSGOMarketData.js';
 import getJson from './getJson.js';
 import { writeFileSync, unlinkSync, existsSync } from 'fs'
 
-const timer = delay => new Promise(res => setTimeout(res, delay));
-const path = './data.csv'
+const group = 'cases' // Config
 
-const getPrices = () => {
-    getJson("http://localhost:4000/items")
+const timer = delay => new Promise(res => setTimeout(res, delay));
+const path = `./${group}.csv`
+
+const getPrices = (serverpath) => {
+    getJson(serverpath)
         .then(async (value) => {
             for (const item in value) {
                 getCSGOMarketData(value[item]["url"], "lowest_price").then((data => {
@@ -47,7 +49,8 @@ if (existsSync(path)) {
     })
 }
 try {
-    getPrices();
+    getPrices(`http://localhost:4000/${group}`);
+
 } catch (error) {
     console.error(error.message);
 }
