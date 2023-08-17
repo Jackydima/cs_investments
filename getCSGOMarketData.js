@@ -36,7 +36,7 @@ const formatPrice = priceText => {
     if (priceText == null) {
         return -1;
     }
-    return Number(priceText.replace("--", "00").replace(",",".").slice(0,-1));
+    return Number(priceText.replace("--", "00").replace(",",".").replace(" ", "").slice(0,-1));
 };
 
 // const testURL = "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Operation%20Broken%20Fang%20Case";
