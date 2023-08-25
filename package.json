@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "server": "npx json-server --watch data.json --port 4000",
+    "server2": "npx json-server --watch inv.json --port 4001",
     "dev": "node ./main.js",
+    "getInvItems": "node ./getInvItems.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jackydima",
