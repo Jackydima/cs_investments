@@ -1,7 +1,10 @@
 # CS investments
 
 ## Info
-This is a private Test-Project for getting Data out of the Steammarket.
+This is a private Test-Project for getting Data out of the Steammarket. 
+
+## Tools
+This project mainly written in Javascript. It uses the node npm packetmanager.
 
 ## Usage
 first time usage and after update:
@@ -33,4 +36,13 @@ Please provide a data.json file that takes the items with the given url
 ~~~
 npm run dev
 ~~~
+
+## Get your Steam Inv Items Amount
+- open the getInvItems.js file and write your steamId in it with the Game ID and the specific steam parameter
+
+~~~
+npm run getInvItems
+~~~
+
+It should print you a sorted List (of a Map) of your items with your parameters
 
