@@ -1,4 +1,5 @@
 /node_modules
 *.csv
-data.json
+/data.json
 /tests
+notizen.txt
