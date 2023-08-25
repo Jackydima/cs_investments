@@ -2,7 +2,18 @@ import { getCSGOMarketData, formatPrice } from './getCSGOMarketData.js';
 import getJson from './getJson.js';
 import { writeFileSync, unlinkSync, existsSync } from 'fs'
 
-const group = 'cases' // Config
+
+const getConfigGroup = () => {
+    for (const arg of process.argv) {
+        //console.log(arg)
+        if (arg.indexOf("-c=") !== -1) {
+            //console.log(arg.split("=")[1])
+            return arg.split("=")[1]
+        }
+    }
+}
+
+const group = getConfigGroup() ?? "cases" // Config
 
 const timer = delay => new Promise(res => setTimeout(res, delay));
 const path = `./${group}.csv`

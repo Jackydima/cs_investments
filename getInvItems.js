@@ -1,7 +1,7 @@
 
 const baseURL = `https://steamcommunity.com/inventory`
 
-const debug = true
+const debug = process.argv.findIndex((e => e === "-d")) !== -1
 const debugURL = "http://localhost:4001/data"
 
 const getInvItems = async (steamid, appId, param) => {
@@ -26,6 +26,8 @@ const getInvItems = async (steamid, appId, param) => {
             printSteamItemsMap(new Map([...items.entries()].sort((a,b) => { // "sorted Map for ItemAmount"
                 return a[1] > b[1] ? -1 : 1
             })), jsonData);
+        } else {
+            console.log("Probably a timeout :(")
         }
     } catch (e) {
         console.log("MEEEN ERROR:", e)
