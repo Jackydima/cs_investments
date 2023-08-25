@@ -13,9 +13,9 @@ const getConfigGroup = () => {
     }
 }
 
-const steamAPIBaseURL = "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name="
+const steamAPIBaseURL = "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=" // for csgo items in euro
 
-const group = getConfigGroup() ?? "cases" // Config
+const group = getConfigGroup() ?? "CSGO_Type_WeaponCase" // Config
 
 const timer = delay => new Promise(res => setTimeout(res, delay));
 const path = `./${group}.csv`
@@ -23,7 +23,13 @@ const path = `./${group}.csv`
 const getPrices = (serverpath) => {
     getJson(serverpath)
         .then(async (value) => {
+            let counter = 0
             for (const item of value) {
+                if (counter >= 15) {
+                    console.log("We waitin")
+                    await timer(30000)
+                    counter = 0;
+                }
                 getCSGOMarketData(`${steamAPIBaseURL}${item}`, "lowest_price").then((data => {
                     if (data == undefined) {
                         console.log(`item( ${item} ) is not in the market or not tradable!`)
@@ -37,8 +43,8 @@ const getPrices = (serverpath) => {
                             throw err
                         }
                     })
-                }))
-                    .catch((error) => { throw error });
+                })).catch((error) => { throw error });
+                counter++
                 await timer(1500); // Use it Slowly and synchronised, so it wont timeout you
             }
         })

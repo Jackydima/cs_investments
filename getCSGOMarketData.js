@@ -13,10 +13,10 @@ const getCSGOMarketData = async (url, path) => {
         const response = await fetch(url);
         const jsonData = await response.json();
         // console.log(jsonData);
-        if (jsonData.succes === false) {
-            return undefined;
-        }
         if (jsonData != null) {
+            if (jsonData.success === false) {
+                return undefined;
+            }
             let value = Object.assign(jsonData);
             path.split(".").forEach(element => {
                 value = value[element];
@@ -25,7 +25,7 @@ const getCSGOMarketData = async (url, path) => {
             // console.log(value);
             return value;
         }
-        throw new Error(`No Success in receiving the data, URL: ${url}`);
+        throw new Error(`No Success in receiving the data, URL, probably due to a timeout: ${url}`);
     } catch (error) {
         throw error;
     }
