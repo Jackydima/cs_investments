@@ -13,7 +13,10 @@ const getCSGOMarketData = async (url, path) => {
         const response = await fetch(url);
         const jsonData = await response.json();
         // console.log(jsonData);
-        if (jsonData != null && jsonData.success === true) {
+        if (jsonData.succes === false) {
+            return undefined;
+        }
+        if (jsonData != null) {
             let value = Object.assign(jsonData);
             path.split(".").forEach(element => {
                 value = value[element];

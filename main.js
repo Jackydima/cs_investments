@@ -25,6 +25,10 @@ const getPrices = (serverpath) => {
         .then(async (value) => {
             for (const item of value) {
                 getCSGOMarketData(`${steamAPIBaseURL}${item}`, "lowest_price").then((data => {
+                    if (data == undefined) {
+                        console.log(`item( ${item} ) is not in the market or not tradable!`)
+                        return
+                    }
                     const price = formatPrice(data)
                     console.log(`${item}, ${price}`)
                     writeFileSync(path, `${item},${price}\n`, { flag: "a" }, err => {
