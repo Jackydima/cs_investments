@@ -13,6 +13,8 @@ const getConfigGroup = () => {
     }
 }
 
+const steamAPIBaseURL = "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name="
+
 const group = getConfigGroup() ?? "cases" // Config
 
 const timer = delay => new Promise(res => setTimeout(res, delay));
@@ -21,12 +23,11 @@ const path = `./${group}.csv`
 const getPrices = (serverpath) => {
     getJson(serverpath)
         .then(async (value) => {
-            for (const item in value) {
-                getCSGOMarketData(value[item]["url"], "lowest_price").then((data => {
+            for (const item of value) {
+                getCSGOMarketData(`${steamAPIBaseURL}${item}`, "lowest_price").then((data => {
                     const price = formatPrice(data)
-                    const condition = value[item]["condition"] ?? "-"
-                    console.log(`${item}, ${price}, ${condition}`)
-                    writeFileSync(path, `${item},${price},${condition}\n`, { flag: "a" }, err => {
+                    console.log(`${item}, ${price}`)
+                    writeFileSync(path, `${item},${price}\n`, { flag: "a" }, err => {
                         if (err) {
                             console.log("Error: ", err)
                             throw err

@@ -21,13 +21,10 @@ npm run server
 This will run a local jsondb server to provide a local json data set of Items in the Format 
 ~~~
 {
-    "items": {
-        "Horizon": {
-            "url": "https://steamcommunity.com/market/priceoverview/?currency=3&appid=730&market_hash_name=Horizon%20Case",
-            "condition": null
-        },
+    "groupName": [
+        "Horizon Case",
         ...
-    }
+    ]
 }
 ~~~
 Please provide a data.json file that takes the items with the given url
