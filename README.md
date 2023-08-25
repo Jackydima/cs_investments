@@ -34,8 +34,11 @@ Please provide a data.json file that takes the items with the given url
 
 - open another terminal and type in to get the data.csv
 ~~~
-npm run dev
+npm run dev [-- -c=""]
 ~~~
+
+the part ns the [...] is optional and declares the "group" of the given "data.json" file
+- it uses the keyword "cases" as a default value if no parameter is provided
 
 ## Get your Steam Inv Items Amount
 - open the getInvItems.js file and write your steamId in it with the Game ID and the specific steam parameter
@@ -44,5 +47,21 @@ npm run dev
 npm run getInvItems
 ~~~
 
+- If you want to analyse local data you should provide a "inv.js"-file with the correct steam json response for your inventory and start an other server with:
+
+~~~
+npm run server2
+~~~
+- and
+
+~~~
+npm run getInvItems -- -d
+~~~
+
+- as a debug flag
+
 It should print you a sorted List (of a Map) of your items with your parameters
+
+
+For now the command line parameters are minimalistic as it can be, with no checks (ignoring wrong inputs)!
 
