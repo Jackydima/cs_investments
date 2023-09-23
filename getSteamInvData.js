@@ -2,6 +2,7 @@
 import { writeFileSync } from 'fs'
 
 const baseURL = `https://steamcommunity.com/inventory`
+const debugURL = "http://localhost:4001/data"
 
 const getConfigSteamId = () => {
     for (const arg of process.argv) {
@@ -12,19 +13,18 @@ const getConfigSteamId = () => {
         }
     }
 }
-const debugURL = "http://localhost:4001/data"
 
 const getInvItems = async (steamid, appId, param, dataPath, debug) => {
     if (steamid == undefined && !debug) {
         throw `You need to provide a steamId for the programm in the command line:\n -> "-SId=<steamId>" or use the debug Flag for the local data entry`
     }
-    console.log(steamid, appId, param, dataPath, debug)
+    //console.log(steamid, appId, param, dataPath, debug)
     const items = new Map()
     const dataGroups = new Map()
     let dataJSON = {}
     try {
         const url = debug ? debugURL : `${baseURL}/${steamid}/${appId}/${param}`
-        //console.log(url)
+        console.log(url)
         const response = await fetch(url)
         const jsonData = await response.json()
 
