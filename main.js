@@ -36,8 +36,8 @@ const getPrices = (serverpath) => {
                         return
                     }
                     const price = formatPrice(data)
-                    console.log(`${item}, ${price}`)
-                    writeFileSync(path, `${item},${price}\n`, { flag: "a" }, err => {
+                    console.log(`${item.replaceAll('%26', '&')}, ${price}`)
+                    writeFileSync(path, `${item.replaceAll('%26', '&')},${price}\n`, { flag: "a" }, err => {
                         if (err) {
                             console.log("Error: ", err)
                             throw err
