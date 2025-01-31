@@ -52,7 +52,6 @@ const getPrices = (serverpath) => {
                         await timer(20000);
                     }
                     while (true) {
-                        console.log(`Try Item ${item}`);
                         await getCSGOMarketData(`${steamAPIBaseURL}${item}`, "lowest_price").then((data => {
                             if (data == undefined) {
                                 console.log(`item( ${item} ) is not in the market or not tradable!`);
