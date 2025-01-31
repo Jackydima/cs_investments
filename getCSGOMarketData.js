@@ -25,7 +25,7 @@ const getCSGOMarketData = async (url, path) => {
             // console.log(value);
             return value;
         }
-        throw new Error(`No Success in receiving the data, URL, probably due to a timeout: ${url}`);
+        throw new Error(`No Success in receiving the data, URL, probably due to a timeout: ${url}`, { cause: "timeout" });
     } catch (error) {
         throw error;
     }

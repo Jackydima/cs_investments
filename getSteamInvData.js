@@ -62,7 +62,9 @@ const getInvItems = async (steamid, appId, param, dataPath, debug) => {
             })
             dataJSON = Object.fromEntries(dataGroups)
 
-            writeFileSync(dataPath, JSON.stringify(dataJSON))
+            let newJSON = { Categories: dataJSON }
+            
+            writeFileSync(dataPath, JSON.stringify(newJSON))
 
             console.log(dataJSON)
         } else {
